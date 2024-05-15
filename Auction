@@ -1,0 +1,25 @@
+def find_winner(bidder_details):
+    max_price = 0
+    winner = ""
+    for name, price in bidder_details.items():
+        if price > max_price:
+            max_price = price
+            winner = name
+    print(f"The winner of the auction is {winner}")
+
+bidder_data = {}
+bidding = True
+
+while bidding:
+    name = input("What is your name: ")
+    price = int(input("What is your price: "))
+
+    bidder_data[name] = price
+
+    bidder = input("Are there more? (yes/no): ")
+    if bidder == "no":
+        bidding = False
+
+find_winner(bidder_data)
+
+
